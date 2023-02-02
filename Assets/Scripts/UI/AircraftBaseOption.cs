@@ -17,8 +17,8 @@ public class AircraftBaseOption : MonoBehaviour
         nameText.text = baseOption.baseName;
         costText.text = "£" + baseOption.baseCost.ToString();
         speedText.text = "Speed: " + baseOption.baseSpeed;    
-        accelText.text = "Accel: " + baseOption.baseAccel;    
-        handlingText.text = "Hand.: " + baseOption.baseHandling;    
+        accelText.text = "Accel: " + baseOption.baseDefense;    
+        handlingText.text = "Hand.: " + baseOption.baseMobility;    
     }
 
     public void ChangeCarBase()

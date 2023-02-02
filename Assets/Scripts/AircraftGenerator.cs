@@ -17,9 +17,10 @@ public class AircraftGenerator : MonoBehaviour
     public AircraftColour currentPrimaryColour;
     public AircraftColour currentSecondaryColour;
     public AircraftWeapon currentWeapon;
+    public AircraftTransforms currentAircraftTransforms;
     private GameObject activeModel;
     private Vector3 modelLocation;
-    private GameObject activeWeapon;
+    private List<GameObject> activeWeapons = new List<GameObject>();
 
     private void Awake() 
     {
@@ -35,6 +36,7 @@ public class AircraftGenerator : MonoBehaviour
         UpdateColour(defaultPrimaryColour, true);
         UpdateColour(defaultSecondaryColour, false);
         GenerateWeapon(defaultWeapon);
+        currentAircraftTransforms.ToggleRotors(true);
     }
 
     public void GenerateAircraft(AircraftBase newBase)
@@ -49,17 +51,15 @@ public class AircraftGenerator : MonoBehaviour
         }
 
         activeModel = Instantiate(currentBase.aircraftModel, modelLocation, Quaternion.identity);
+        currentAircraftTransforms = activeModel.GetComponent<AircraftTransforms>();
 
-        UpdateSpoilerLocation();
+        UpdateWeaponLocations();
         UpdateUI();
     }
 
     public void GenerateWeapon(AircraftWeapon newWeapon)
     {
-        if (activeWeapon)
-        {
-            Destroy(activeWeapon);
-        }
+        ClearActiveWeapons();
 
         if (!newWeapon)
         {
@@ -71,18 +71,24 @@ public class AircraftGenerator : MonoBehaviour
 
         if (currentWeapon.weaponModel)
         {
-            activeWeapon = Instantiate(currentWeapon.weaponModel, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            activeWeapon = null;
-        }
-
-        if (currentWeapon.weaponType == WeaponType.Spoiler)
-        {
-            activeWeapon.transform.position = currentBase.spoilerLocation;
+            foreach(Transform location in currentAircraftTransforms.weaponLocations)
+            {
+                activeWeapons.Add(Instantiate(currentWeapon.weaponModel, location));
+            }
+            
         }
         UpdateUI();
+    }
+
+    private void ClearActiveWeapons()
+    {
+        if (activeWeapons.Count > 0)
+        {
+            foreach(GameObject weapon in activeWeapons)
+            {
+                Destroy(weapon);
+            }
+        }
     }
 
     public void UpdateColour(AircraftColour newColour, bool isPrimaryColour)
@@ -100,10 +106,14 @@ public class AircraftGenerator : MonoBehaviour
         UpdateUI();
     }
 
-    private void UpdateSpoilerLocation()
+    private void UpdateWeaponLocations()
     {
-        if (activeWeapon == null) {return;}
-        activeWeapon.transform.position = currentBase.spoilerLocation;
+        if (activeWeapons.Count == 0) {return;}
+        ClearActiveWeapons();
+        foreach(Transform location in currentAircraftTransforms.weaponLocations)
+        {   
+            activeWeapons.Add(Instantiate(currentWeapon.weaponModel, location));
+        }
     }
 
 
@@ -119,9 +129,11 @@ public class AircraftGenerator : MonoBehaviour
         + currentWeapon.weaponCost);
 
         uIManager.SetStats(
-            currentBase.baseSpeed + currentWeapon.weaponSpeed,
-            currentBase.baseAccel + currentWeapon.weaponAccel,
-            currentBase.baseHandling + currentWeapon.weaponHandling
+            currentBase.baseSpeed,
+            currentBase.baseDefense,
+            currentBase.baseMobility,
+            currentWeapon.weaponAirToAir,
+            currentWeapon.weaponAirToGround
         );
 
     }

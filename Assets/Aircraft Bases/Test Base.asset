@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e4f913f0446134dbd6b4e08f69aa7e, type: 3}
   m_Name: Test Base
   m_EditorClassIdentifier: 
-  baseName: Test Base
-  aircraftModel: {fileID: 2132970168135295506, guid: fa28e0cc64b3f4345a9d2215c5bfec80, type: 3}
+  baseName: Light Plane
+  aircraftModel: {fileID: 2480941734362383583, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   baseCost: 250
   primaryMaterial: {fileID: 2100000, guid: 7b40966d798061345bccba570d0b975e, type: 2}
   secondaryMaterial: {fileID: 2100000, guid: e3e2c12576f307741af655072336ef86, type: 2}
-  spoilerLocation: {x: 0, y: 0, z: 0}
+  aircraftTransforms: {fileID: 3838364976218589360, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   baseSpeed: 2
-  baseAccel: 4
-  baseHandling: 4
+  baseDefense: 6
+  baseMobility: 4

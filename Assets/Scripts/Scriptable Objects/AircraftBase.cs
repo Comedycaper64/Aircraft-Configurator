@@ -10,13 +10,12 @@ public class AircraftBase : ScriptableObject
     public float baseCost;
     public Material primaryMaterial;
     public Material secondaryMaterial;
-    public Vector3 spoilerLocation;
 
     [Header("Model Stats")]
-    [Range(0, 7)]
+    [Range(0, 10)]
     public int baseSpeed;
-    [Range(0, 7)]
-    public int baseAccel;
-    [Range(0, 7)]
-    public int baseHandling;
+    [Range(0, 10)]
+    public int baseDefense;
+    [Range(0, 10)]
+    public int baseMobility;
 }

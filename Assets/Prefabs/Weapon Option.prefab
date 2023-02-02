@@ -44,9 +44,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866519219413101389, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7207718910009822280, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_Name
-      value: Accessory Option
+      value: Weapon Option
       objectReference: {fileID: 0}
     - target: {fileID: 7207718910009822281, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_Pivot.x
@@ -138,11 +142,11 @@ PrefabInstance:
       objectReference: {fileID: 7096179783756726862}
     - target: {fileID: 7207718910009822286, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeCarAccessory
+      value: ChangeAircraftWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 7207718910009822286, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CarAccessoryOption, Assembly-CSharp
+      value: AircraftWeaponOption, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7820270936032036599, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -178,15 +182,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8767222299639683514, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8767222299639683514, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8767222299639683514, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -150
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2091737613783862825, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
@@ -209,12 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ac763e9d4cf7a4f85168c511e8ef14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accessoryOption: {fileID: 0}
+  weaponOption: {fileID: 0}
   nameText: {fileID: 3628998768313329535}
   costText: {fileID: 6874658890816310397}
-  speedText: {fileID: 6751028891025300510}
-  accelText: {fileID: 7542727246223058759}
-  handlingText: {fileID: 7068983775690851545}
+  airToAirText: {fileID: 6751028891025300510}
+  airToGroundText: {fileID: 7542727246223058759}
 --- !u!114 &3628998768313329535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9145355875915204314, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
@@ -240,17 +243,6 @@ MonoBehaviour:
 --- !u!114 &6874658890816310397 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1428114174416137688, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
-  m_PrefabInstance: {fileID: 5527640296043602341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7068983775690851545 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3363077154242684284, guid: 351ba8694d482ec4ca01a9c78d5b9b4f, type: 3}
   m_PrefabInstance: {fileID: 5527640296043602341}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

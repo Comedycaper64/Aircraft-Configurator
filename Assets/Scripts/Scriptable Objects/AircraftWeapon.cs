@@ -11,10 +11,8 @@ public class AircraftWeapon : ScriptableObject
     public WeaponType weaponType;
 
     [Header("Weapon Stats")]
-    [Range(0,1)]
-    public int weaponSpeed; 
-    [Range(0,1)]
-    public int weaponAccel; 
-    [Range(0,1)]
-    public int weaponHandling; 
+    [Range(0,10)]
+    public int weaponAirToAir; 
+    [Range(0,10)]
+    public int weaponAirToGround; 
 }

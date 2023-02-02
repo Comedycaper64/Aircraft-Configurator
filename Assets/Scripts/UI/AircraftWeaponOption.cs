@@ -8,20 +8,18 @@ public class AircraftWeaponOption : MonoBehaviour
     [SerializeField] private AircraftWeapon weaponOption;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI costText;
-    [SerializeField] private TextMeshProUGUI speedText;
-    [SerializeField] private TextMeshProUGUI accelText;
-    [SerializeField] private TextMeshProUGUI handlingText;
+    [SerializeField] private TextMeshProUGUI airToAirText;
+    [SerializeField] private TextMeshProUGUI airToGroundText;
 
     private void Start() 
     {
         nameText.text = weaponOption.weaponName;
         costText.text = "£" + weaponOption.weaponCost.ToString();
-        speedText.text = "Speed: " + weaponOption.weaponSpeed;    
-        accelText.text = "Accel: " + weaponOption.weaponAccel;    
-        handlingText.text = "Hand.: " + weaponOption.weaponHandling;    
+        airToAirText.text = "Air-To-Air: " + weaponOption.weaponAirToAir;    
+        airToGroundText.text = "Air-To-Ground: " + weaponOption.weaponAirToGround;    
     }
 
-    public void ChangeCarAccessory()
+    public void ChangeAircraftWeapon()
     {
         AircraftGenerator.Instance.GenerateWeapon(weaponOption);
         UIManager.Instance.OpenMainMenu();

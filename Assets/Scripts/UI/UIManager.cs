@@ -14,8 +14,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI baseText;
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private Slider speedSlider;
-    [SerializeField] private Slider accelSlider;
-    [SerializeField] private Slider handlingSlider;
+    [SerializeField] private Slider defenseSlider;
+    [SerializeField] private Slider mobilitySlider;
+    [SerializeField] private Slider airToAirSlider;
+    [SerializeField] private Slider airToGroundSlider;
 
     [SerializeField] private MenuOption baseMenuOption;
     [SerializeField] private MenuOption weaponMenuOption;
@@ -72,10 +74,12 @@ public class UIManager : MonoBehaviour
         costText.text = "Cost: £" + newCost;
     }
 
-    public void SetStats(int newSpeedValue, int newAccelValue, int newHandlingValue)
+    public void SetStats(int newSpeedValue, int newDefenseValue, int newMobilityValue, int newAirToAirValue, int newAirToGroundValue)
     {
         speedSlider.value = newSpeedValue;
-        accelSlider.value = newAccelValue;
-        handlingSlider.value = newHandlingValue;
+        defenseSlider.value = newDefenseValue;
+        mobilitySlider.value = newMobilityValue;
+        airToAirSlider.value = newAirToAirValue;
+        airToGroundSlider.value = newAirToGroundValue;
     }
 }
