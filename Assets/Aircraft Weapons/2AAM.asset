@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871bfd714ffe51c44a863b201f5cb3a4, type: 3}
+  m_Name: 2AAM
+  m_EditorClassIdentifier: 
+  weaponName: 2AAM
+  weaponModel: {fileID: 176036, guid: 85f575819f3601e428a17e076612676f, type: 3}
+  weaponCost: 150
+  weaponType: 0
+  weaponAirToAir: 10
+  weaponAirToGround: 3

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e4f913f0446134dbd6b4e08f69aa7e, type: 3}
+  m_Name: Eagle Plane
+  m_EditorClassIdentifier: 
+  baseName: Eagle Plane
+  aircraftModel: {fileID: 5721003125740162517, guid: 426e560e97af2d64ca46c3484e244231, type: 3}
+  baseCost: 500
+  primaryMaterial: {fileID: 2100000, guid: 7b40966d798061345bccba570d0b975e, type: 2}
+  secondaryMaterial: {fileID: 2100000, guid: e3e2c12576f307741af655072336ef86, type: 2}
+  baseSpeed: 8
+  baseDefense: 2
+  baseMobility: 6

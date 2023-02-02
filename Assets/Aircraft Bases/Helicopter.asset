@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09e4f913f0446134dbd6b4e08f69aa7e, type: 3}
-  m_Name: Test Base
+  m_Name: Helicopter
   m_EditorClassIdentifier: 
-  baseName: Light Plane
-  aircraftModel: {fileID: 2480941734362383583, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
-  baseCost: 250
+  baseName: Helicopter
+  aircraftModel: {fileID: 5396434264798959518, guid: 02bd3c20a578a4b4aa4e3116a00dcd67, type: 3}
+  baseCost: 700
   primaryMaterial: {fileID: 2100000, guid: 7b40966d798061345bccba570d0b975e, type: 2}
   secondaryMaterial: {fileID: 2100000, guid: e3e2c12576f307741af655072336ef86, type: 2}
-  aircraftTransforms: {fileID: 3838364976218589360, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   baseSpeed: 2
-  baseDefense: 6
-  baseMobility: 4
+  baseDefense: 8
+  baseMobility: 5

@@ -36,7 +36,6 @@ public class AircraftGenerator : MonoBehaviour
         UpdateColour(defaultPrimaryColour, true);
         UpdateColour(defaultSecondaryColour, false);
         GenerateWeapon(defaultWeapon);
-        currentAircraftTransforms.ToggleRotors(true);
     }
 
     public void GenerateAircraft(AircraftBase newBase)
@@ -52,6 +51,8 @@ public class AircraftGenerator : MonoBehaviour
 
         activeModel = Instantiate(currentBase.aircraftModel, modelLocation, Quaternion.identity);
         currentAircraftTransforms = activeModel.GetComponent<AircraftTransforms>();
+
+        currentAircraftTransforms.ToggleRotors(true);
 
         UpdateWeaponLocations();
         UpdateUI();
