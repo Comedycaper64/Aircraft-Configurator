@@ -6,8 +6,8 @@ using System;
 
 public class CameraController : MonoBehaviour
 {
-    private const float MIN_FOLLOW_Y_OFFSET = 0f;
-    private const float MAX_FOLLOW_Y_OFFSET = 5f;
+    private const float MIN_FOLLOW_Y_OFFSET = -2f;
+    private const float MAX_FOLLOW_Y_OFFSET = 4f;
 
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
     private CinemachineTransposer cinemachineTransposer;

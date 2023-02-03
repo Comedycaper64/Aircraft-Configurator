@@ -14,7 +14,6 @@ public class AircraftTransforms : MonoBehaviour
     {
         if (spinRotors)
         {
-            Debug.Log("Spinning");
             foreach(Rotor rotor in rotors)
             {
                 if (rotor.rotorSpinAxis == Rotor.RotorSpinAxis.x)

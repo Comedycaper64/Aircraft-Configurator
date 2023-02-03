@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance {get; private set;}
 
     [SerializeField] private GameObject currentOpenMenu;
+    [SerializeField] private string currentBackground;
     [SerializeField] private GameObject mainMenu;
 
     [SerializeField] private TextMeshProUGUI baseText;
@@ -23,6 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private MenuOption weaponMenuOption;
     [SerializeField] private MenuOption colour1MenuOption;
     [SerializeField] private MenuOption colour2MenuOption;
+    [SerializeField] private MenuOption backgroundMenuOption;
 
     private void Awake() 
     {
@@ -37,6 +39,7 @@ public class UIManager : MonoBehaviour
 
     private void Start() 
     {
+        SetCurrentBackground("Nighttime");
         UpdateOptions();    
     }
 
@@ -55,6 +58,11 @@ public class UIManager : MonoBehaviour
         UpdateOptions();
     }
 
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
     private void UpdateOptions()
     {
         AircraftGenerator generator = AircraftGenerator.Instance;
@@ -62,6 +70,7 @@ public class UIManager : MonoBehaviour
         colour1MenuOption.UpdateOption(generator.currentPrimaryColour.colourName, generator.currentPrimaryColour.colourCost.ToString());
         colour2MenuOption.UpdateOption(generator.currentSecondaryColour.colourName, generator.currentSecondaryColour.colourCost.ToString());
         weaponMenuOption.UpdateOption(generator.currentWeapon.weaponName, generator.currentWeapon.weaponCost.ToString());
+        backgroundMenuOption.UpdateOption(currentBackground, "0");
     }
 
     public void SetBaseText(string newBaseText)
@@ -72,6 +81,11 @@ public class UIManager : MonoBehaviour
     public void SetCostText(float newCost)
     {
         costText.text = "Cost: £" + newCost;
+    }
+
+    public void SetCurrentBackground(string newBackground)
+    {
+        currentBackground = newBackground;
     }
 
     public void SetStats(int newSpeedValue, int newDefenseValue, int newMobilityValue, int newAirToAirValue, int newAirToGroundValue)
