@@ -15,6 +15,6 @@ MonoBehaviour:
   weaponName: 2AAM
   weaponModel: {fileID: 176036, guid: 85f575819f3601e428a17e076612676f, type: 3}
   weaponCost: 150
-  weaponType: 0
+  weaponType: 1
   weaponAirToAir: 10
   weaponAirToGround: 3

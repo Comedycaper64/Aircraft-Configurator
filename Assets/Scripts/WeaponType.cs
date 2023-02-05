@@ -5,6 +5,5 @@ using UnityEngine;
 public enum WeaponType
 {
     None,
-    Spoiler,
-    Launcher,
+    Missile,
 }

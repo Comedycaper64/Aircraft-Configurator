@@ -109,7 +109,7 @@ public class AircraftGenerator : MonoBehaviour
 
     private void UpdateWeaponLocations()
     {
-        if (activeWeapons.Count == 0) {return;}
+        if ((activeWeapons.Count == 0) || (currentWeapon.weaponType == WeaponType.None)) {return;}
         ClearActiveWeapons();
         foreach(Transform location in currentAircraftTransforms.weaponLocations)
         {   

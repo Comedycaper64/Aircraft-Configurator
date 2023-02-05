@@ -8,9 +8,14 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance {get; private set;}
 
+    private List<AircraftConfig> savedConfigs = new List<AircraftConfig>();
+
     [SerializeField] private GameObject currentOpenMenu;
     [SerializeField] private string currentBackground;
     [SerializeField] private GameObject mainMenu;
+
+    [SerializeField] private GameObject loadOptionPrefab;
+    [SerializeField] private Transform loadOptionContainer;
 
     [SerializeField] private TextMeshProUGUI baseText;
     [SerializeField] private TextMeshProUGUI costText;
@@ -71,6 +76,23 @@ public class UIManager : MonoBehaviour
         colour2MenuOption.UpdateOption(generator.currentSecondaryColour.colourName, generator.currentSecondaryColour.colourCost.ToString());
         weaponMenuOption.UpdateOption(generator.currentWeapon.weaponName, generator.currentWeapon.weaponCost.ToString());
         backgroundMenuOption.UpdateOption(currentBackground, "0");
+    }
+
+    public void SaveConfig()
+    {
+        AircraftGenerator generator = AircraftGenerator.Instance;
+        savedConfigs.Add(new AircraftConfig(generator.currentBase, generator.currentPrimaryColour, generator.currentSecondaryColour, generator.currentWeapon));
+        LoadOption newConfig = Instantiate(loadOptionPrefab, loadOptionContainer).GetComponent<LoadOption>();
+        newConfig.SetupOption(savedConfigs[savedConfigs.Count - 1], "Save " + savedConfigs.Count.ToString());
+    }
+    
+    public void LoadConfig(AircraftConfig config)
+    {
+        AircraftGenerator generator = AircraftGenerator.Instance;
+        generator.UpdateColour(config.aircraftColour1, true);
+        generator.UpdateColour(config.aircraftColour2, false);
+        generator.GenerateAircraft(config.aircraftBase);
+        generator.GenerateWeapon(config.aircraftWeapon);
     }
 
     public void SetBaseText(string newBaseText)
